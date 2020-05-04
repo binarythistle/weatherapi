@@ -17,8 +17,8 @@ resource "azurerm_resource_group" "tf_test" {
   location  = "Australia East"
 }
 
-resource "azurerm_container_group" "tf_test_az_cg" {
-    name                = "weatherapi_terra"
+resource "azurerm_container_group" "tftestazcg" {
+    name                = "weatherapiterra"
     location            = azurerm_resource_group.tf_test.location
     resource_group_name = azurerm_resource_group.tf_test.name
     ip_address_type     = "public"
@@ -27,7 +27,7 @@ resource "azurerm_container_group" "tf_test_az_cg" {
 
     container {
         name            = "weatherapi"
-        image           = "binarythistle/weatherapi"
+        image           = "binarythistle/weatherapiazdo"
         cpu             = "1"
         memory          = "1"
 
