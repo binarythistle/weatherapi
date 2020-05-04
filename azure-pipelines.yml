@@ -31,7 +31,7 @@ stages:
       displayName: Build and Push and Image to DockerHub
       inputs:
         containerRegistry: 'binarythistledocker'
-        repository: 'binarythistle/weatherapi:v1'
+        repository: 'binarythistle/weatherapi'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
 - stage: Provision
@@ -57,3 +57,4 @@ stages:
         ARM_CLIENT_SECRET: $(ARM_CLIENT_SECRET)
         ARM_TENANT_ID: $(ARM_TENANT_ID)
         ARM_SUBSCRIPTION_ID: $(ARM_SUBSCRIPTION_ID)
+        IMAGE_TAG: $(tag)
