@@ -13,21 +13,21 @@ terraform {
 }
 
 resource "azurerm_resource_group" "tf_test" {
-  name      = "tfrgmain"
+  name      = "tfmainrg"
   location  = "Australia East"
 }
 
 resource "azurerm_container_group" "tftestazcg" {
-    name                = "weatherapiterra"
+    name                = "weatherapi"
     location            = azurerm_resource_group.tf_test.location
     resource_group_name = azurerm_resource_group.tf_test.name
     ip_address_type     = "public"
-    dns_name_label      = "binarythistleapiterra"
+    dns_name_label      = "binarythistleapitf"
     os_type             =  "Linux"
 
     container {
         name            = "weatherapi"
-        image           = "binarythistle/weatherapiazdo"
+        image           = "binarythistle/weatherapi"
         cpu             = "1"
         memory          = "1"
 

@@ -31,7 +31,7 @@ stages:
       displayName: Build and Push and Image to DockerHub
       inputs:
         containerRegistry: 'binarythistledocker'
-        repository: 'binarythistle/weatherapiazdo'
+        repository: 'binarythistle/weatherapi'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
 - stage: Provision
