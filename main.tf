@@ -12,6 +12,12 @@ terraform {
     }
 }
 
+variable "image_tag" {
+  type        = string
+  default     = "220"
+  description = "Version Number of the latest image"
+}
+
 resource "azurerm_resource_group" "tf_test" {
   name      = "tfmainrg"
   location  = "Australia East"
@@ -27,7 +33,7 @@ resource "azurerm_container_group" "tftestazcg" {
 
     container {
         name            = "weatherapi"
-        image           = "binarythistle/weatherapi:${var.TF_VAR_image_tag}"
+        image           = "binarythistle/weatherapi:${var.image_tag}"
         cpu             = "1"
         memory          = "1"
 
