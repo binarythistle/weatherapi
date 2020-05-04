@@ -27,7 +27,7 @@ resource "azurerm_container_group" "tftestazcg" {
 
     container {
         name            = "weatherapi"
-        image           = "binarythistle/weatherapi:218"
+        image           = "binarythistle/weatherapi:${var.TF_VAR_image_tag}"
         cpu             = "1"
         memory          = "1"
 
