@@ -14,7 +14,6 @@ terraform {
 
 variable "image_tag" {
   type        = string
-  default     = "220"
   description = "Version Number of the latest image"
 }
 
